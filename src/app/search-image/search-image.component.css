@@ -1,0 +1,41 @@
+
+.container {
+    text-align: center;
+    background-color: #FFB6C1;
+    margin-left: 500px;
+    width: 340px;
+    height: 300px;
+    margin-top: 100px;
+}
+
+.container label {
+    background: white;
+    padding-top: 5px;
+    width: 300px;
+    height: 40px;
+
+}
+.container input {
+    margin-top: 20px;
+}
+
+.container div span {
+    color: red;
+    font-weight: bold;
+}
+
+.container input {
+    width: 300px;
+}
+
+.tab {
+    background: #FEB5C0;
+    text-align: center;
+   margin-left: 550px;
+   margin-right: 550px;
+}
+
+.container button {
+    background: #1AA2B1;
+    color: white;
+}

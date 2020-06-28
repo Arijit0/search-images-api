@@ -1,0 +1,25 @@
+
+<!-- Tab links -->
+<div class="tab">
+    <label class="tablinks">Search Image</label>
+    <label class="tablinks" routerLink="searched">Searched Images</label>
+  </div>
+
+
+<div class="container" [ngStyle]="{'display': !displayStyle ? 'block' : (displayStyle ? 'none' : null) }">
+    <br><label>Search for keywords</label><br>
+    <input type="search" value="" name="search" #input required>
+    <div *ngIf="value">
+        <br><br>
+        <span>{{errorMessage}}</span>
+    </div> 
+    <br><br>
+    <button value="search"  (click)="getImage(input.value)">search</button><br><br>
+   
+</div>
+
+
+    <img *ngFor="let image of imageShow" class="image" [src]="image.largeImageURL" alt="" width="400" height="300">
+
+
+

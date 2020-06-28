@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearchImageComponent } from './search-image/search-image.component';
+import { SearchedImageComponent } from './searched-image/searched-image.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ImageShowComponent } from './image-show/image-show.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchImageComponent,
+    SearchedImageComponent,
+    ImageShowComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
