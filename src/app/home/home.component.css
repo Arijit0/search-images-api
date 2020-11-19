@@ -39,3 +39,11 @@
     background: #1AA2B1;
     color: white;
 }
+
+.loader {
+    margin-top: 250px;
+  }
+
+  .images-show {
+    margin-left: 85px;
+  }

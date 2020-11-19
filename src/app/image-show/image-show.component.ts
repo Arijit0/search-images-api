@@ -9,10 +9,17 @@ export class ImageShowComponent implements OnInit {
 
   constructor() { }
 
-  largeImageView: any=[];
+  images: any=[];
+  loaderShow: boolean = false;
 
   ngOnInit(): void {
-  this.largeImageView = JSON.parse(localStorage.getItem('image'));
+  this.loaderShow = true;
+  this.fetchInfo();
+  }
+
+  fetchInfo() {
+    this.images = JSON.parse(localStorage.getItem('SHOW_FROM_LOCALSTORAGE'));
+    this.loaderShow = false;
   }
 
 

@@ -1,4 +1,17 @@
 
-<div class="main-container"> 
+<!-- <div class="main-container"> 
     <img *ngFor="let finalImage of largeImageView" class="image" [src]="finalImage.largeImageURL" alt="" width="400" height="300">
-</div>
+</div> -->
+
+<!-- Photo Grid -->
+
+    <div *ngIf="loaderShow" class="d-flex justify-content-center loader">
+        <div class="spinner-border" role="status">
+        </div>
+    </div>
+
+        <div *ngIf="!loaderShow" class="images">
+            <img *ngFor="let eachResult of images" [src]="eachResult.largeImageURL" width="400" height="300">
+        </div>
+     
+      

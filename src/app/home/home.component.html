@@ -1,0 +1,65 @@
+
+ <div *ngIf="loaderShow" class="d-flex justify-content-center loader">
+    <div class="spinner-border" role="status">
+    </div>
+</div>
+
+
+
+<div *ngIf="!loaderShow">
+
+    <!-- Tab links -->
+    <ul class="nav nav-tabs mb-4 justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item"> <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true">Search Image</a> </li>
+        <li class="nav-item"> <a class="nav-link" id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false">Searched Images</a> </li>
+     </ul>
+    
+    
+     <!-- Tab link panels -->
+    
+     <div class="tab-content my-3" id="myTabContent">
+
+        <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+            
+            <div class="container" *ngIf="displayStyle">
+                <br><label>Search for keywords</label><br>
+                <input type="search" value="" name="search" #input required>
+                <div *ngIf="value">
+                    <br><br>
+                    <span>{{errorMessage}}</span>
+                </div> 
+                <br><br>
+                <button value="search" (click)="getImage(input.value)">search</button><br><br>
+               
+            </div>
+    
+           <div *ngIf="!displayStyle" class="images-show">
+                <img *ngFor="let eachImage of images" class="image" [src]="eachImage.largeImageURL" alt="" width="400" height="300">
+           </div> 
+        </div>
+    
+        <div class="tab-pane fade show text-center" id="second" role="tabpanel" aria-labelledby="second-tab">
+            
+           <div *ngIf="isSearched">
+                <div *ngFor="let eachSearch of localStorageQueryArr; let queryIndex=index">
+                    <button (click)="searchFromLocal(eachSearch,queryIndex)" class="btn btn-primary">
+                        {{eachSearch}}
+                    </button><br><br>
+                </div>
+           </div>
+
+           <div *ngIf="!isSearched">
+                <h3 class="text-center">Please Search For Images</h3>
+           </div>
+          
+              
+        </div>
+     </div> 
+</div>
+
+
+   
+
+  
+
+
